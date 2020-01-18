@@ -1,0 +1,21 @@
+cURL is a client-side software for transferring data using URLs. This is the
+Certificate Authorities (CA) certificate bundle for peer SSL certificate
+verification. For more information see:
+
+https://curl.haxx.se/docs/caextract.html
+
+This package contains the original CA certificate bundle file and the custom
+C library source code for querying its path all packaged for the build2 package
+manager (bpkg).
+
+See the INSTALL file for the prerequisites and installation instructions.
+
+Send questions, bug reports, or any other feedback about the certificate
+bundle itself to the cURL mailing lists. Send the library, build system and
+packaging-related feedback to the packaging@build2.org mailing list (see
+https://lists.build2.org for posting guidelines, etc).
+
+The packaging of libca-certificates-curl for build2 is tracked in a Git
+repository at:
+
+https://git.build2.org/cgit/packaging/curl/

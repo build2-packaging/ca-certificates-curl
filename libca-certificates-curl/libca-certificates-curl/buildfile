@@ -1,0 +1,69 @@
+# file      : libca-certificates-curl/buildfile
+# copyright : Copyright (c) 2018-2019 Code Synthesis Ltd
+# license   : Mozilla Public License 2.0; see accompanying LICENSE file
+
+define pem: file
+pem{*}: extension = pem
+pem{*}: install = data/
+
+lib{ca-certificates-curl}: {h c}{** -ca-certificates-*installed -version} \
+                           {h  }{version                                } \
+                           {pem}{cacert                                 }
+
+lib{ca-certificates-curl}: c{ca-certificates-installed}:   for_install = true
+lib{ca-certificates-curl}: c{ca-certificates-uninstalled}: for_install = false
+
+# Include the generated version header into the distribution (so that we don't
+# pick up an installed one) and don't remove it when cleaning in src (so that
+# clean results in a state identical to distributed).
+#
+h{version}: in{version} $src_root/manifest
+{
+  dist  = true
+  clean = ($src_root != $out_root)
+}
+
+# Build options.
+#
+c.poptions =+ "-I$out_root" "-I$src_root"
+
+obja{*}: c.poptions += -DLIBCA_CERTIFICATES_CURL_STATIC_BUILD
+objs{*}: c.poptions += -DLIBCA_CERTIFICATES_CURL_SHARED_BUILD
+
+# While these object files should only be linked in their respective
+# cases (installing/not installing), they will be compiled even in
+# the other cases.
+#
+{obja objs}{ca-certificates-uninstalled}: c.poptions += \
+  -DCA_CERTIFICATES_BUNDLE_PATH=\"$regex.replace(\
+    $src_base/cacert.pem, '\\', '\\\\')\"
+
+if ($install.root != [null])
+  {obja objs}{ca-certificates-installed}: c.poptions += \
+    -DCA_CERTIFICATES_BUNDLE_PATH=\"$regex.replace(\
+      $install.resolve($install.data)/cacert.pem, '\\', '\\\\')\"
+
+# Export options.
+#
+lib{ca-certificates-curl}: cc.export.poptions = "-I$out_root" "-I$src_root"
+
+liba{ca-certificates-curl}: cc.export.poptions += -DLIBCA_CERTIFICATES_CURL_STATIC
+libs{ca-certificates-curl}: cc.export.poptions += -DLIBCA_CERTIFICATES_CURL_SHARED
+
+# For pre-releases use the complete version to make sure they cannot be used
+# in place of another pre-release or the final version. See the version module
+# for details on the version.* variable values.
+#
+if $version.pre_release
+  lib{ca-certificates-curl}: bin.lib.version = @"-$version.project_id"
+else
+  lib{ca-certificates-curl}: bin.lib.version = @"-$version.major.$version.minor"
+
+# Install into the libca-certificates-curl/ subdirectory of, say, /usr/include/
+# recreating subdirectories.
+#
+{h}{*}:
+{
+  install         = include/libca-certificates-curl/
+  install.subdirs = true
+}

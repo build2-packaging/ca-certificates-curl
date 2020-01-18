@@ -1,0 +1,5 @@
+The checked out libca-certificates-curl/libca-certificates-curl/version.h will
+be overwritten during the build process but these changes should be ignored.
+To do this automatically, run:
+
+git update-index --assume-unchanged libca-certificates-curl/libca-certificates-curl/version.h

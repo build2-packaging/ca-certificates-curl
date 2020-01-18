@@ -1,0 +1,11 @@
+# file      : build/root.build
+# copyright : Copyright (c) 2018-2019 Code Synthesis Ltd
+# license   : Mozilla Public License 2.0; see accompanying LICENSE file
+
+project = libca-certificates-curl
+
+using version
+using config
+using test
+using install
+using dist
