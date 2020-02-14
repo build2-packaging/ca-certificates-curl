@@ -1,5 +1,4 @@
 /* file      : libca-certificates-curl/export.h -*- C -*-
- * copyright : Copyright (c) 2018-2019 Code Synthesis Ltd
  * license   : Mozilla Public License 2.0; see accompanying LICENSE file
  */
 
