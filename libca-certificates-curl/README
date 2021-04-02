@@ -2,7 +2,7 @@ cURL is a client-side software for transferring data using URLs. This is the
 Certificate Authorities (CA) certificate bundle for peer SSL certificate
 verification. For more information see:
 
-https://curl.haxx.se/docs/caextract.html
+https://curl.se/docs/caextract.html
 
 This package contains the original CA certificate bundle file and the custom
 C library source code for querying its path all packaged for the build2 package

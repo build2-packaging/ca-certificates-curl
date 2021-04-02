@@ -29,9 +29,8 @@ c.poptions =+ "-I$out_root" "-I$src_root"
 obja{*}: c.poptions += -DLIBCA_CERTIFICATES_CURL_STATIC_BUILD
 objs{*}: c.poptions += -DLIBCA_CERTIFICATES_CURL_SHARED_BUILD
 
-# While these object files should only be linked in their respective
-# cases (installing/not installing), they will be compiled even in
-# the other cases.
+# While these object files should only be linked in their respective cases
+# (installing/not installing), they will be compiled even in the other cases.
 #
 {obja objs}{ca-certificates-uninstalled}: c.poptions += \
   -DCA_CERTIFICATES_BUNDLE_PATH=\"$regex.replace(\

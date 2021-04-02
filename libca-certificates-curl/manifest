@@ -1,13 +1,13 @@
 : 1
 name: libca-certificates-curl
-version: 1.0.0+1
-upstream-version: 20200101
+version: 1.0.1-a.0.z
+upstream-version: 20210119
 project: curl
 summary: CA certificate bundle and C library for querying its path
 license: MPLv2 ; Mozilla Public License v2.0.
 topics: C, SSL, TLS, Certificate Authority
 description-file: README
-url: https://curl.haxx.se/docs/caextract.html
+url: https://curl.se/docs/caextract.html
 src-url: https://git.build2.org/cgit/packaging/curl/ca-certificates-curl/tree/libca-certificates-curl/
 package-url: https://git.build2.org/cgit/packaging/curl/
 email: curl-library@cool.haxx.se    ; Mailing list.
