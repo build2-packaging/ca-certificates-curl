@@ -1,7 +1,5 @@
 On the revision:
 
-- Replace the C++ comments with C comments in version.h.in and export.h.
-
 On the release:
 
 - Use legal{} target type for legal documentation (LICENSE, AUTHORS, etc).
