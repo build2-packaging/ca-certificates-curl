@@ -1,7 +1,5 @@
 On the revision:
 
-- Canonicalize the license in the package manifest.
-
 - Disable the success build emails.
 
 - Replace the C++ comments with C comments in version.h.in and export.h.
