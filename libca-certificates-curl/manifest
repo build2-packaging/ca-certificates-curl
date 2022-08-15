@@ -1,6 +1,6 @@
 : 1
 name: libca-certificates-curl
-version: 1.0.2-a.0.z
+version: 1.0.2
 upstream-version: 20220719
 project: curl
 summary: CA certificate bundle and C library for querying its path
