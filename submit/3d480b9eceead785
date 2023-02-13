@@ -1,0 +1,7 @@
+: 1
+name: libca-certificates-curl
+version: 1.0.3
+upstream-version: 20230110
+project: curl
+summary: CA certificate bundle and C library for querying its path
+license: MPL-2.0; Mozilla Public License 2.0.
