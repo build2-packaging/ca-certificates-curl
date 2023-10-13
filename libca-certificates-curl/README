@@ -4,8 +4,8 @@ verification. For more information see:
 
 https://curl.se/docs/caextract.html
 
-This package contains the original CA certificate bundle file and the custom
-C library source code for querying its path all packaged for the build2 package
+This package contains the original CA certificate bundle file and the custom C
+library source code for querying its path all packaged for the build2 package
 manager (bpkg).
 
 See the INSTALL file for the prerequisites and installation instructions.
