@@ -1,6 +1,6 @@
 : 1
 name: libca-certificates-curl
-version: 1.0.6-a.0.z
+version: 1.0.6
 upstream-version: 20261020
 project: curl
 priority: security
